@@ -1,0 +1,42 @@
+Arguments: 
+  /home/andy/.nvm/versions/node/v16.8.0/bin/node /mnt/c/Program Files (x86)/Yarn/bin/yarn.js add inquier
+
+PATH: 
+  /home/andy/.config/composer/vendor/bin:/home/andy/.nvm/versions/node/v16.8.0/bin:/home/andy/.vscode-server/bin/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/AMD/ATI.ACE/Core-Static:/mnt/c/Users/aalva/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Cmder:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/wamp64/bin/php/php7.3.21:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files (x86)/Bitvise SSH Client:/mnt/c/Program Files/MongoDB/Server/4.4/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files (x86)/Yarn/bin/:/mnt/c/Users/aalva/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/aalva/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/aalva/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/aalva/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/aalva/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/aalva/AppData/Local/Yarn/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.8.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/inquier: Not found
+      at Request.params.callback [as _callback] (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:66140:18)
+      at Request.self.callback (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:140885:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:141857:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/mnt/c/Program Files (x86)/Yarn/lib/cli.js:141779:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+  	"type": "module",
+  	"name": "clase03",
+  	"version": "1.0.0",
+  	"main": "index.js",
+  	"license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
