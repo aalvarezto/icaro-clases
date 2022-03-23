@@ -37,9 +37,9 @@ Alguna versión de Node.js, por ejemplo:
 
     $ node ejemploFunciones.js
 
-    $ node ejemploIf.js.js
+    $ node ejemploIf.js
 
-    $ node ejemploWhile.js.js
+    $ node ejemploWhile.js
 
 ### Leer Archivos MD (recomendado)
 

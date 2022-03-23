@@ -12,13 +12,15 @@ function limpiarStringHastaCinco(nuevoNombre) {
 	nombre = nuevoNombre
 }
 
-console.log("============== Primer ejemplo ==============")
-console.log(nombre)
+// console.log("============== Primer ejemplo ==============")
+// console.log(nombre)
 
-console.log("============== Segundo ejemplo =============")
-limpiarStringHastaCinco("Agus 123456578912345")
-console.log(nombre)
+// console.log("============== Segundo ejemplo =============")
+// limpiarStringHastaCinco("Agus 123456578912345")
+// console.log(nombre)
 
-console.log("============== Tercer ejemplo ==============")
-limpiarStringHastaCinco("Carlos 123")
-console.log(nombre)
+// console.log("============== Tercer ejemplo ==============")
+// limpiarStringHastaCinco("Carlos 123")
+// console.log(nombre)
+
+export { limpiarStringHastaCinco }
