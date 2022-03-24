@@ -11,10 +11,13 @@ const askOptions = (label, options) =>
 		type: "list",
 		name: "option",
 		message: label,
-		choices: [...options, ["salir", 0]].map(([option, index]) => ({
-			value: option,
-			name: `${green(index ? index : blue(0))}. ${capFirst(option)}`,
-		})),
+		choices: options
+			.map((option, index) => [option, index + 1])
+			.concat([["salir", 0]])
+			.map(([option, index]) => ({
+				value: option,
+				name: `${green(index ? index : blue(0))}. ${capFirst(option)}`,
+			})),
 	})
 
 export { askOptions }

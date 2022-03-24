@@ -14,7 +14,7 @@ const hacerMatematicaCon = async operadores => {
 	do {
 		clearConsoleAndDisplay()
 
-		option = await askMathOptions()
+		option = await askMathOptions(Object.keys(operadores))
 
 		option === "salir" || (await doMath(option))
 
