@@ -16,16 +16,7 @@ const hacerMatematicaCon = async operadores => {
 
 		option = await askMathOptions()
 
-		option =
-			option === "sumar"
-				? await doMath(option)
-				: option === "restar"
-				? await doMath(option)
-				: option === "multiplicar"
-				? await doMath(option)
-				: option === "dividir"
-				? await doMath(option)
-				: "salir"
+		option === "salir" || (await doMath(option))
 
 		clearConsoleAndDisplay()
 	} while (option !== "salir")
