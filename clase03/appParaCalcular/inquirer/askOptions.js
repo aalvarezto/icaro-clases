@@ -6,18 +6,23 @@ import { capFirst } from "../utils.js"
 
 const { green, blue } = chalk
 
-const askOptions = (label, options) =>
+const toOptionIndexTuple = (x, i) => [x, i + 1]
+
+const toChangeIndexColor = ([x, i]) => [x, i ? green(i) : blue(i)]
+
+const toValueNameTuple = ([x, i]) => [x, `${i}. ${capFirst(x)}`]
+
+const askOptions = label => options =>
 	_createPrompt({
 		type: "list",
 		name: "option",
 		message: label,
 		choices: options
-			.map((option, index) => [option, index + 1])
-			.concat([["salir", 0]])
-			.map(([option, index]) => ({
-				value: option,
-				name: `${green(index ? index : blue(0))}. ${capFirst(option)}`,
-			})),
-	})
+			.map(toOptionIndexTuple)
+			// .concat([["salir", 0]])
+			.map(toChangeIndexColor)
+			.map(toValueNameTuple)
+			.map(([value, name]) => ({ value, name })),
+	})()
 
-export { askOptions }
+export default askOptions

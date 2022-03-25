@@ -2,4 +2,4 @@
 
 const processMathFunc = mathFn => xs => mathFn(...xs)
 
-export { processMathFunc }
+export default processMathFunc

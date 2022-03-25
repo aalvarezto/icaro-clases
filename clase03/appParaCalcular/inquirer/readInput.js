@@ -10,4 +10,4 @@ const readInput = (inputLable, validation = () => true) =>
 		validate: validation,
 	})()
 
-export { readInput }
+export default readInput

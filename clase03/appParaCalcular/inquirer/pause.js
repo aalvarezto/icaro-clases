@@ -11,4 +11,4 @@ const pause = _createPrompt({
 	message: `Presione ${green("ENTER")} para continuar.`,
 })
 
-export { pause }
+export default pause
