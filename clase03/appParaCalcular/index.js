@@ -3,7 +3,9 @@
 import clearConsoleAndDisplay from "./clearConsoleAndDisplay.js"
 import forMathWith from "./forMathWith.js"
 
-export const hacerMatematicaCon = async operadores =>
+const hacerMatematicaCon = async operadores =>
 	clearConsoleAndDisplay() &&
-	(await forMathWith(operadores)) &&
+	(await forMathWith(operadores)) !== [] &&
 	hacerMatematicaCon(operadores)
+
+export { hacerMatematicaCon }

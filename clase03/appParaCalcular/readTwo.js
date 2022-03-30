@@ -9,11 +9,10 @@ const validate = value =>
 		? "Por favor ingrese un número válido."
 		: true
 
-const readTwo = async () => {
-	const firstVal = await readInput("Ingrese valor A:", validate)
-	const secondVal = await readInput("Ingrese valor B:", validate)
-
-	return [firstVal, secondVal].map(Number)
-}
+const readTwo = async () =>
+	[
+		await readInput("Ingrese valor A:", validate),
+		await readInput("Ingrese valor B:", validate),
+	].map(Number)
 
 export default readTwo
