@@ -6,6 +6,8 @@
 
 El video de la clase está subido y puede reveerlo quien guste, así y todo algunos temas quizás se entiendan mejor con algunas líneas de texto que sirvan como material de lectura.
 
+Vale la pena aclarar que este material es simplemente complementario.
+
 ### Truthy & Falthy
 
 Existe una función en JavaScript que nos va a ayudar a saber que valores son "truthy" o "falthy". Esta función en cuestión es `Boolean()`. Esta función evalúa lo que coloquemos en su interior y nos devuelve como resultado `true` o `false`.
@@ -39,133 +41,103 @@ Existe una función en JavaScript que nos va a ayudar a saber que valores son "t
     ]
     ```
 
-### Short Cicuit VS Ternarios
+### Short Cicuit VS If/Else
+
+Los corto circuitos son una funcionalidad de JavaScript que nos permite crear lógicas muy similares a las que podemos crear con operadores de `if` y `else`.
+
+El operador comienza a evaliar el código de izquierda a deracha y obtenemos en principio dos evaluaciones:
 
 ```js
-const returnsLast = []
+primera evaluación || segunda evaluación
+
+primera evaluación && segunda evaluación
 ```
 
--   Modulos
+Tanto el operador `or` como el operador `and` evalúa el primer valor para saber si es **"truthy"** o **"falsy"**.
 
-    -   **_ES modules:_**
+En el caso de `or` este operador evalúa el primer valor (el de la izquierda), si este resulta ser **"falsy"** el operador continúa evaluando y nos devuelve el segundo valor (el de la derecha).
 
-        -   Exportación
+Si el primer valor es **"truthy"** el operador `or` corta la evaluación y nos retorna el valor evaluado.
 
-            ```js
-            // en un archivo sumar.js
-            function sumar(a, b) {
-            	return a + b
-            }
+```js
+let casoOr
 
-            export { sumar }
-            ```
+casoOr = false || "entrego este string"
+casoOr = "entrego este string" || false
 
-        -   Importación
+// Lo de arriba es equivalenta a esto 👇
 
-            ```js
-            // en el archivo index.js
-            // que en lo posible que esté en el mismo directorio
-            import { sumar } from "./sumar.js"
+let casoOrConIf
 
-            var resultado = sumar(1, 1)
-
-            console.log(resultado) // 2
-            ```
-
-    -   **_CommonJS:_**
-
-        -   Eportación
-
-            ```js
-            // en un archivo sumar.js
-            function sumar(a, b) {
-            	return a + b
-            }
-
-            module.exports = { sumar }
-            ```
-
-        -   Importación
-
-            ```js
-            // en el archivo index.js
-            // que en lo posible que esté en el mismo directorio
-            var { sumar } = require("./sumar.js")
-
-            var resultado = sumar(1, 1)
-
-            console.log(resultado) // 2
-            ```
-
-#### ¡¡**Importante** para **_ESModules_**!!
-
-Recordar ejecutar el comando:
-
-    $ npm ini -y
-
-y en el archivo creado por node (**_package.json_**) insertar lo siguiente:
-
-```json
-{
-	"type": "module"
+// casOrConIf = false || "entrego este string"
+if (false) {
+	casoOrConIf = false
+} else {
+	casoOrConIf = "entrego este string"
 }
+
+// casoOr = "entrego este string" || false
+if ("entrego este string") {
+	casoOrConIf = "entrego este string"
+} else {
+	casoOrConIf = false
+}
+
+// versión en ternarios
+casoOrConIf = false ? false : "entrego este string"
+casoOrConIf = "entrego este string" ? "entrego este string" : false
 ```
 
-### App Para Calcular
+En el caso de `and` este operador evalúa el primer valor, si este resulta ser **"truthy"** el operador continúa evaluando y nos devuelve el segundo valor.
 
-Les hice un programa para ejecutar sus funciones creadas para ingresar desde la línea de comandos.
+Si el primer valor es **"falsy"** el operador `or` corta la evaluación y nos retorna el valor evaluado.
 
-La app funciona como si una empresa los contratara y les pidiera que implementen algunas funcionalidades para su modelo de negocios (en este caso la empresa se dedicaría a la aritmética al parecer...).
+```js
+let casoAnd
 
-A ustedes les piden implementar las funciones de:
+casoAnd = "soy truthy, retorno el valor de al lado" && false
+casoAnd = false && "soy truthy, retorno el valor de al lado"
 
--   Sumar
--   Restar
--   Multiplicar
--   Dividir
+// Lo de arriba es equivalenta a esto 👇
 
-La empresa pide también aplicar ciertos criterios de escalabilidad y buenas prácticas.
+let casoAndConIf
 
-Las funciones son las mismas que vimos en la clase del taller, y solamente tienen que colocar sus archivos en la carpeta `./operadoresMatematicos` y exportar las funciones desde el archivo `index.js`
+// casoAndConIf = "soy truthy, retorno el valor de al lado" && false
+if ("soy truthy, retorno el valor de al lado") {
+	casoAndConIf = false
+} else {
+	casoAndConIf = "soy truthy, retorno el valor de al lado"
+}
 
-#### **ACLARACIÓN IMPORTANTE**
+// casoAnd = "entrego este string" && false
+if (false) {
+	casoAndConIf = "soy truthy, retorno el valor de al lado"
+} else {
+	casoAndConIf = false
+}
 
-Sí o sí, sus archivos tienen que estar dentro de la carpeta `./operadoresMatematicos` y tienen que tener los siguientes nombres `dividir.js`, `multiplicar.js`, `restar.js` y `sumar.js`, con sus respectivas funciones creadas y exportadas con los mismo nombres, todo con la sintaxis de ESModules.
-
-Si no se sigue correctamente este paso, puede haber errores para correr el programa.
-
-Cuidado con las mayúsculas, evitarlas en lo posible.
-
-#### Directorio de archivos
-
-```
-- project
-|
-│   - appParaCalcular
-|
-│   - operadoresMatematicos
-│   │
-│   │   - dividir.js
-│   │   - index.js
-│   │   - multiplicar.js
-│   │   - restar.js
-│   │   - sumar.js
-│
-|   - app.js
+// versión en ternarios
+casoAndConIf = "entrego este string" ? false : "entrego este string"
+casoAndConIf = false ? "entrego este string" : false
 ```
 
-#### Requerimientos
+#### ¿Para qué sirve esto?
 
-Alguna versión de Node.js, por ejemplo:
+Los short circuits tienen gran aceptación en el uso cotidiano de los desarrolladores. Eso quiere decir que no va a resultar extraño encontrarse con este tipo de sintaxis en el día a día.
 
-    $ node -v
-    v14.8.0
+Su correcto uso nos permite escribir algunas lógicas con menos texto, así y todo eso no siempre es deseable. Siempre hay que tener en cuenta que se puede ser más prolijo simplemente utilizando `else` e `if` por mucho que "engorde" nuestro código.
 
-#### Comandos
+Los casos de uso más comunes son cuándo no sabemos si una propiedad (key) de un objeto existe, entonces podemos usar la siguiente lógica.
 
-    $ npm install
+```js
+const { data } = await getUsuarioAPI()
 
-    $ node app.js
+const nombreDeUsuario = data.nombre || "Usurio"
+```
+
+Este es un caso muy típico cuando trabajamos con APIs, muchas veces las APIs no nos devuelven los datos de forma completa y nos retornan `null`, `undefined` o simplemente `""`.
+
+En este caso estamos pasando como valor por defecto el string `"Usuario"`.
 
 ### Leer Archivos MD (recomendado)
 
