@@ -1,5 +1,5 @@
 "use strict"
 
-const processMathFunc = mathFn => xs => mathFn(...xs)
+const processMathFunc = mathFn => x => mathFn.apply(null, x)
 
-export { processMathFunc }
+export default processMathFunc

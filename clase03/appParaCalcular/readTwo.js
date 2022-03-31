@@ -1,6 +1,6 @@
 "use strict"
 
-import { readInput } from "./inquirer/readInput.js"
+import readInput from "./inquirer/readInput.js"
 
 const validate = value =>
 	value.length === 0
@@ -9,11 +9,10 @@ const validate = value =>
 		? "Por favor ingrese un número válido."
 		: true
 
-const readTwo = async () => {
-	const firstVal = await readInput("Ingrese valor A:", validate)
-	const secondVal = await readInput("Ingrese valor B:", validate)
+const readTwo = async () =>
+	[
+		await readInput("Ingrese valor A:", validate),
+		await readInput("Ingrese valor B:", validate),
+	].map(Number)
 
-	return [firstVal, secondVal].map(Number)
-}
-
-export { readTwo }
+export default readTwo

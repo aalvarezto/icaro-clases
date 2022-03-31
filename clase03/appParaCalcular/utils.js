@@ -1,4 +1,4 @@
-import { pause } from "./inquirer/pause.js"
+import pause from "./inquirer/pause.js"
 
 const composeAsync =
 	(...fns) =>

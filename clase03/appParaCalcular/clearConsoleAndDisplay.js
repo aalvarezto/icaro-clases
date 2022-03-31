@@ -4,7 +4,10 @@ import chalk from "chalk"
 
 const { green } = chalk
 
-const clearConsoleAndDisplay = (x = "") =>
-	console.clear() || !x || console.log(`Operación: ${green(x)} \n`) || x
+const clearConsoleAndDisplay = (option = "") =>
+	console.clear() ||
+	!option ||
+	console.log(`Operación: ${green(option)} \n`) ||
+	option
 
-export { clearConsoleAndDisplay }
+export default clearConsoleAndDisplay
