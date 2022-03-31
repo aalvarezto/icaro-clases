@@ -1,7 +1,7 @@
 "use strict"
 
 // comando a ejecutar 👇🏻
-// node app.js hola cómo estás hola
+// node ejemploProcessArgv.js hola cómo estás hola
 
 var entrada = process.argv
 
