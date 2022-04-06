@@ -1,0 +1,5 @@
+hola mundo
+
+hola, estamos en clase
+
+este es un ejemplo de array = [1, 2, 3]
