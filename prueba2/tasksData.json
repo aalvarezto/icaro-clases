@@ -1,0 +1,18 @@
+[
+    {
+        "title": "ciclismo",
+        "desc": "salimos a andar en bici"
+    },
+    {
+        "title": "caminata",
+        "desc": "salimos a caminar"
+    },
+    {
+        "title": "natación",
+        "desc": "salimos a nadar"
+    },
+    {
+        "title": "foo",
+        "desc": "hello there"
+    }
+]

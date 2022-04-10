@@ -1,12 +1,6 @@
 "use strict"
 
-const {
-	listar,
-	encontrar,
-	editar,
-	filtrar,
-	retornar,
-} = require("./comandos/tasks")
+const { listar, encontrar, editar, filtrar, retornar } = require("./comandos/")
 const { tasks } = require("./tasksData")
 
 const entrada = process.argv
